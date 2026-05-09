@@ -9,7 +9,7 @@ apt-get update -qq
 # 1. Create user mark if it doesn't exist
 if ! id -u mark &>/dev/null; then
     echo "Creating user 'mark'..."
-    useradd -m -s /usr/bin/zsh mark
+    useradd -m -s /usr/bin/bash mark
     echo "mark ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/mark
     chmod 440 /etc/sudoers.d/mark
 fi
@@ -44,8 +44,8 @@ if systemctl restart ssh; then
 fi
 
 # 5. Make sure zsh is installed early
-if ! command -v zsh &>/dev/null; then
-    apt-get install -y zsh
+if ! command -v bash &>/dev/null; then
+    apt-get install -y bash
 fi
 
 echo "✓ User 'mark' created, SSH key installed, root access hardened."

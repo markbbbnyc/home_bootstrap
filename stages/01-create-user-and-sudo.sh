@@ -15,13 +15,13 @@ if ! id -u mark &>/dev/null; then
 fi
 
 # 2. Change root password (interactive, only once)
-if [ ! -f /root/.root_password_set ]; then
-    echo "=== Set new root password ==="
-    passwd root
-    touch /root/.root_password_set
-fi
+#if [ ! -f /root/.root_password_set ]; then
+#    echo "=== Set new root password ==="
+#    passwd root
+#    touch /root/.root_password_set
+#fi
 
-# 3. Setup SSH key for mark (idempotent)
+## 3. Setup SSH key for mark (idempotent)
 mkdir -p /home/mark/.ssh
 cat > /home/mark/.ssh/authorized_keys << 'EOF'
 ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEG3otktoD1Stvuci/JSYN0JanuWnCceBrmDgs0/Z5xo

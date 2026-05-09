@@ -126,10 +126,12 @@ else
     echo "✓ .msmtprc already exists"
 fi
 
+
 # ==================== Create .pinerc for Alpine ====================
 cat > "$PINERC" << 'EOF'
-# Folder collections — THIS EXACT LINE fixes "No folder collections defined"
-folder-collections="Maildir" {~/Maildir/}[]
+# Local Maildir collection + inbox-path (THIS fixes the remaining issues)
+inbox-path=#md/INBOX
+folder-collections="Maildir" #md/Maildir/[]
 
 # Sending via msmtp
 sendmail-path=/usr/bin/msmtp -t
@@ -149,7 +151,8 @@ EOF
 
 chown mark:mark "$PINERC"
 chmod 644 "$PINERC"
-echo "✓ .pinerc (re)created with correct folder-collections"
+echo "✓ .pinerc (re)created with correct Maildir support"
+
 
 # ==================== Auto-start fetchmail on reboot ====================
 if ! crontab -u mark -l 2>/dev/null | grep -q "fetchmail"; then

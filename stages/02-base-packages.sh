@@ -6,7 +6,7 @@ echo ">>> Stage 02: Base packages + preferred tools"
 apt-get update -qq
 
 apt-get install -y -qq \
-    zsh git curl wget unzip \
+    zsh git curl wget unzip duf \
     neovim bat tmux mc glances htop \
     fetchmail alpine btm mariadb-server mycli \
     lf  # file manager (available on Ubuntu 24.04)

@@ -8,7 +8,7 @@ apt-get update -qq
 apt-get install -y -qq \
     zsh git curl wget unzip \
     neovim bat tmux mc glances htop \
-    fetchmail alpine btm mariadb mycli \
+    fetchmail alpine btm mariadb-server mycli \
     lf  # file manager (available on Ubuntu 24.04)
 
 # Make bat usable as "cat" alias later

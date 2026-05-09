@@ -61,10 +61,10 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-# Starship prompt (will be enabled in next stage)
-# if command -v starship >/dev/null 2>&1; then
-#     eval "$(starship init bash)"
-# fi
+# Starship prompt 
+ if command -v starship >/dev/null 2>&1; then
+     eval "$(starship init bash)"
+ fi
 
 echo "✓ Mark's bashrc loaded (bootstrap v1)"
 EOF

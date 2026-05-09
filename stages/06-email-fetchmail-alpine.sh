@@ -128,30 +128,32 @@ fi
 
 
 # ==================== Create .pinerc for Alpine ====================
+
 cat > "$PINERC" << 'EOF'
-# Local Maildir collection + inbox-path (THIS fixes the remaining issues)
-inbox-path=#md/INBOX
-folder-collections="Maildir" #md/Maildir/[]
+# Gmail IMAP configuration
+inbox-path={imap.gmail.com:993/ssl/user=markbbbnyc2@gmail.com}INBOX
+folder-collections=Gmail {imap.gmail.com:993/ssl/user=markbbbnyc2@gmail.com}[]
 
-# Sending via msmtp
+# Sending via Gmail SMTP
 sendmail-path=/usr/bin/msmtp -t
+smtp-server=smtp.gmail.com:587/tls/user=markbbbnyc2@gmail.com
 
-# Nice defaults
+# Default folders
 default-fcc=Sent
 sent-mail=Sent
 postponed-folder=Drafts
 trash-folder=Trash
 
-# Use nvim as editor
+# Editor
 editor=nvim
 
-# Show full headers when needed
+# Enable full headers
 enable-full-header-cmd
 EOF
 
 chown mark:mark "$PINERC"
 chmod 644 "$PINERC"
-echo "✓ .pinerc (re)created with correct Maildir support"
+echo "✓ .pinerc configured for Gmail IMAP"   
 
 
 # ==================== Auto-start fetchmail on reboot ====================

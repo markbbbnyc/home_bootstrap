@@ -76,7 +76,7 @@ set daemon 300
 
 poll imap.gmail.com port 993
     proto imap
-    user "markbbbnyc@gmail.com"
+    user "markbbbnyc2@gmail.com"
     pass "$EMAIL_PASS"
     ssl
     sslcertck

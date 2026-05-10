@@ -37,13 +37,32 @@ $git_status\
 $cmd_duration\
 $line_break\
 $character"""
-[username] style_user = "bold green" style_root = "bold red"
-[hostname] style = "bold yellow" ssh_only = false
-[directory] truncation_length = 3 style = "bold cyan"
-[git_branch] style = "bold purple"
-[git_status] style = "bold red"
-[cmd_duration] style = "bold yellow" min_time = 500
-[character] success_symbol = "[➜](bold green)" error_symbol = "[✗](bold red)"
+
+[username]
+style_user = "bold green"
+style_root = "bold red"
+
+[hostname]
+style = "bold yellow"
+ssh_only = false
+
+[directory]
+truncation_length = 3
+style = "bold cyan"
+
+[git_branch]
+style = "bold purple"
+
+[git_status]
+style = "bold red"
+
+[cmd_duration]
+style = "bold yellow"
+min_time = 500
+
+[character]
+success_symbol = "[➜](bold green)"
+error_symbol = "[✗](bold red)"
 EOF
 fi
 chown -R mark:mark "${USER_HOME}/.config"

@@ -1,42 +1,32 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-echo "🪄 Stage 05: tmux auto-start on SSH login — weaving the time portal..."
+echo "🌀 Stage 05: Configuring tmux auto-start on SSH login..."
 
 USER_HOME="/home/mark"
-[ -d "$USER_HOME" ] || { echo "❌ User home not found — skipping."; exit 1; }
-
-tmux -V >/dev/null 2>&1 || { apt-get update -qq && apt-get install -y -qq tmux; }
-
-TMUX_CONF="${USER_HOME}/.tmux.conf"
-if [ ! -f "$TMUX_CONF" ]; then
-    cat > "$TMUX_CONF" << 'EOF'
-set -g default-terminal "screen-256color"
-set -ga terminal-overrides ",*256col*:Tc"
-set -g mouse on
-set -g base-index 1; setw -g pane-base-index 1
-set -g renumber-windows on
-set -s escape-time 0
-set -g status-style "bg=#282c34,fg=#abb2bf"
-set -g status-right "#[fg=#61afef]%H:%M #[fg=#98c379]%d-%b-%y"
-bind | split-window -h -c "#{pane_current_path}"
-bind - split-window -v -c "#{pane_current_path}"
-bind h select-pane -L; bind j select-pane -D; bind k select-pane -U; bind l select-pane -R
-bind a attach-session -t main
-bind r source-file ~/.tmux.conf \; display "tmux reloaded!"
-EOF
-fi
-
 BASHRC="${USER_HOME}/.bashrc"
-if ! grep -q "tmux auto-start" "$BASHRC" 2>/dev/null; then
-    cat >> "$BASHRC" << 'EOF'
 
-if [ -n "$SSH_CLIENT" ] && [ -z "$TMUX" ]; then
-    exec tmux new-session -A -s main
+# 1. Safety: ensure user home exists (Stage 01 should have created it)
+if [ ! -d "$USER_HOME" ]; then
+    echo "⚠️  /home/mark does not exist yet. Skipping tmux autostart."
+    exit 0
 fi
-EOF
-fi
-chown mark:mark "$TMUX_CONF" "$BASHRC"
-chmod 644 "$TMUX_CONF" "$BASHRC"
 
-echo "✨ Stage 05 complete! The time portal is active."
+touch "$BASHRC"
+
+# 2. The tmux launch block (safe for interactive + SSH only)
+TMUX_BLOCK='# 🌀 Auto-launch tmux on SSH login
+if [[ $- == *i* ]] && [[ -n "${SSH_CONNECTION:-$SSH_CLIENT}" ]] && [ -z "$TMUX" ]; then
+    tmux start-server \
+        && tmux new-session -d -s "mark-home" \
+        && tmux attach-session -t "mark-home" \
+        && exit
+fi'
+
+# 3. Idempotent: skip if already appended
+if grep -qF "# 🌀 Auto-launch tmux on SSH login" "$BASHRC"; then
+    echo "🐌 tmux autostart already configured — skipping."
+else
+    echo "$TMUX_BLOCK" >> "$BASHRC"
+    echo "✅ tmux autostart appended to ~/.bashrc"
+fi

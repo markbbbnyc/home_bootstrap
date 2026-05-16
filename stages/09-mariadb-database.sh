@@ -67,3 +67,20 @@ echo "🎉 Stage 09 complete! The enchanted database vault is now open."
 echo "   User: mark"
 echo "   Host: localhost"
 echo "   Use: mysql -u mark -p"
+
+# -- 5 . Create ~/.my.cnf
+cat >~/.my.cnf <<EOF
+[client]
+user = mark
+password = ${DB_PASS}
+
+# Optional: add these if you want defaults
+ host = localhost
+ port = 3306
+EOF
+
+# Secure the file (very important!)
+chmod 600 ~/.my.cnf
+
+echo "✅ ~/.my.cnf created successfully with your credentials."
+echo "File location: $(realpath ~/.my.cnf)"

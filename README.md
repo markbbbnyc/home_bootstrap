@@ -22,6 +22,7 @@ bash /opt/home_bootstrap/install.sh
 | `06`  | 💬 Sets up `weechat` IRC client (SMTP-free comms) |
 | `07`  | 🔑 Configures Git & dedicated GitHub SSH key |
 | `08`  | 🛡️ Locks down SSH (root login & passwords disabled) |
+| `09`  | 🛡️ Insall Nerdverse Mariadb (mark mycli login ) |
 
 ## 🗝️ Notes
 - 🪄 All stages are **idempotent** → safe to run multiple times

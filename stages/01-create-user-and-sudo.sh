@@ -24,7 +24,8 @@ fi
 # Install SSH key for mark (idempotent)
 mkdir -p /home/mark/.ssh
 cat > /home/mark/.ssh/authorized_keys << 'EOF'
-ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEG3otktoD1Stvuci/JSYN0JanuWnCceBrmDgs0/Z5xo
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEG3otktoD1Stvuci/JSYN0JanuWnCceBrmDgs0/Z5xo Connecting to my ThinkCentre
+
 EOF
 chmod 700 /home/mark/.ssh
 chmod 600 /home/mark/.ssh/authorized_keys

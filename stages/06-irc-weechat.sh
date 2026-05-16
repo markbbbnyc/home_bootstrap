@@ -38,12 +38,12 @@ EOF
 fi
 
 # Create auto-connect wrapper script
-cat > "${USER_HOME}/.irc_autostart.sh" << 'EOF'
+#cat > "${USER_HOME}/.irc_autostart.sh" << 'EOF'
 #!/usr/bin/env bash
-[ -n "$SSH_CLIENT" ] && [ -z "$TMUX" ] && exec irssi
-EOF
-chmod +x "${USER_HOME}/.irc_autostart.sh"
-chown mark:mark "${USER_HOME}/.irc_autostart.sh" "${USER_HOME}/.irssi" -R
+#[ -n "$SSH_CLIENT" ] && [ -z "$TMUX" ] && exec irssi
+#EOF
+#chmod +x "${USER_HOME}/.irc_autostart.sh"
+#chown mark:mark "${USER_HOME}/.irc_autostart.sh" "${USER_HOME}/.irssi" -R
 
 # Add to bashrc if not present
 BASHRC="${USER_HOME}/.bashrc"

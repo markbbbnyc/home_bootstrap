@@ -7,7 +7,7 @@ SSH_CONFIG="/etc/ssh/sshd_config"
 BACKUP="${SSH_CONFIG}.backup.$(date +%s)"
 [ ! -f "/etc/ssh/sshd_config.backup" ] && cp "$SSH_CONFIG" "$BACKUP" && cp "$BACKUP" /etc/ssh/sshd_config.backup
 
-sed -i 's/^#\?PermitRootLogin.*/PermitRootLogin no/' "$SSH_CONFIG"
+#sed -i 's/^#\?PermitRootLogin.*/PermitRootLogin no/' "$SSH_CONFIG"
 sed -i 's/^#\?PasswordAuthentication.*/PasswordAuthentication no/' "$SSH_CONFIG"
 sed -i 's/^#\?ChallengeResponseAuthentication.*/ChallengeResponseAuthentication no/' "$SSH_CONFIG"
 sed -i 's/^#\?PermitEmptyPasswords.*/PermitEmptyPasswords no/' "$SSH_CONFIG"

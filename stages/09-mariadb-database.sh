@@ -5,35 +5,35 @@ echo "Stage 09: 🗄️ Install MariaDB, create full-privs user 'mark', and load
 
 # ── Password handling (priority: argument → env var → interactive prompt)
 if [ $# -ge 1 ]; then
-    DB_PASS="$1"
-    echo "🔑 Password received via command-line argument."
+  DB_PASS="$1"
+  echo "🔑 Password received via command-line argument."
 elif [ -n "${MARK_DB_PASSWORD:-}" ]; then
-    DB_PASS="${MARK_DB_PASSWORD}"
-    echo "🔑 Password received via MARK_DB_PASSWORD environment variable."
+  DB_PASS="${MARK_DB_PASSWORD}"
+  echo "🔑 Password received via MARK_DB_PASSWORD environment variable."
 else
-    echo "🔑 Please enter a strong password for the MariaDB user 'mark':"
-    read -s -p "Password: " DB_PASS
-    echo
-    if [ -z "$DB_PASS" ]; then
-        echo "❌ Error: Password cannot be empty!"
-        exit 1
-    fi
-    # Optional: Ask for confirmation
-    read -s -p "Confirm Password: " DB_PASS_CONFIRM
-    echo
-    if [ "$DB_PASS" != "$DB_PASS_CONFIRM" ]; then
-        echo "❌ Error: Passwords do not match!"
-        exit 1
-    fi
+  echo "🔑 Please enter a strong password for the MariaDB user 'mark':"
+  read -s -p "Password: " DB_PASS
+  echo
+  if [ -z "$DB_PASS" ]; then
+    echo "❌ Error: Password cannot be empty!"
+    exit 1
+  fi
+  # Optional: Ask for confirmation
+  read -s -p "Confirm Password: " DB_PASS_CONFIRM
+  echo
+  if [ "$DB_PASS" != "$DB_PASS_CONFIRM" ]; then
+    echo "❌ Error: Passwords do not match!"
+    exit 1
+  fi
 fi
 
 # ── 1. Install MariaDB (idempotent)
 if ! dpkg -l | grep -q "^ii  mariadb-server"; then
-    echo "🪄 Summoning MariaDB server + client..."
-    apt-get update -qq
-    apt-get install -y -qq mariadb-server mariadb-client
+  echo "🪄 Summoning MariaDB server + client..."
+  apt-get update -qq
+  apt-get install -y -qq mariadb-server mariadb-client
 else
-    echo "✅ MariaDB already installed."
+  echo "✅ MariaDB already installed."
 fi
 
 # ── 2. Ensure service is running
@@ -52,15 +52,15 @@ mysql -u root -e "
 echo "✅ MariaDB user 'mark' is ready with full privileges!"
 
 # ── 4. Load database dump if present
-DUMP_FILE="${BOOTSTRAP_DIR:-/opt/home_bootstrap}/initial-db-dump.sql"
+DUMP_FILE="${BOOTSTRAP_DIR:-/opt/home_bootstrap}/data/nerdverse-dump.sql"
 
 if [ -f "$DUMP_FILE" ]; then
-    echo "📥 Found dump file → loading schema and data..."
-    mysql -u root < "$DUMP_FILE"
-    echo "✅ Database dump loaded successfully!"
+  echo "📥 Found dump file → loading schema and data..."
+  mysql -u root <"$DUMP_FILE"
+  echo "✅ Database dump loaded successfully!"
 else
-    echo "📌 No dump file found at $DUMP_FILE"
-    echo "   Tip: Place your schema+data file there and re-run to auto-import."
+  echo "📌 No dump file found at $DUMP_FILE"
+  echo "   Tip: Place your schema+data file there and re-run to auto-import."
 fi
 
 echo "🎉 Stage 09 complete! The enchanted database vault is now open."

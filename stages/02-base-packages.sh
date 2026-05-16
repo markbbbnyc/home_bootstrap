@@ -5,9 +5,9 @@ echo "🪄 Stage 02: Base packages + preferred tools — gathering the workshop 
 
 apt-get update -qq
 apt-get install -y -qq \
-    bash git curl wget unzip duf \
-    neovim bat tmux mc glances htop weechat\
-    lf irssi # Removed zsh/fetchmail/alpine; added irssi for IRC
+  bash git curl wget unzip duf mycli \
+  neovim bat tmux mc glances htop weechat \
+  lf irssi btop links # Removed zsh/fetchmail/alpine; added irssi for IRC
 
 # Alias bat as cat for consistent tooling
 ln -sf /usr/bin/batcat /usr/local/bin/bat 2>/dev/null || true

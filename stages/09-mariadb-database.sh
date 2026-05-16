@@ -83,4 +83,4 @@ chmod 600 /home/mark/.my.cnf
 chown mark:mark /home/mark/.my.cnf
 
 echo "✅ ~/.my.cnf created successfully with your credentials."
-echo "File location: $(realpath ~/.my.cnf)"
+echo "File location: /home/mark/.my.cnf"

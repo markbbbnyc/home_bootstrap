@@ -5,7 +5,7 @@ Welcome, traveler! This is a modular, idempotent bootstrap suite to transform a 
 ## 🧭 How to Cast the Spell
 ```bash
 # Run as root (required for system-wide enchantments) - but run in folder not pipe to bash
-curl -fsSL https://raw.githubusercontent.com/markbbbnyc/home_bootstrap/main/install.sh 
+curl -O https://raw.githubusercontent.com/markbbbnyc/home_bootstrap/main/install.sh 
 
 # Or re-run anytime to refresh/update:
 bash /opt/home_bootstrap/install.sh

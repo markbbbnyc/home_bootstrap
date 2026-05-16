@@ -69,7 +69,7 @@ echo "   Host: localhost"
 echo "   Use: mysql -u mark -p"
 
 # -- 5 . Create ~/.my.cnf
-cat >~/.my.cnf <<EOF
+cat >/home/mark/.my.cnf <<EOF
 [client]
 user = mark
 password = ${DB_PASS}

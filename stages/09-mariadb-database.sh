@@ -69,18 +69,18 @@ echo "   Host: localhost"
 echo "   Use: mysql -u mark -p"
 
 # -- 5 . Create ~/.my.cnf
+
 cat >/home/mark/.my.cnf <<EOF
 [client]
 user = mark
 password = ${DB_PASS}
-
-# Optional: add these if you want defaults
- host = localhost
- port = 3306
+host = localhost
+port = 3306
 EOF
 
-# Secure the file (very important!)
-chmod 600 ~/.my.cnf
+# Secure and own the file
+chmod 600 /home/mark/.my.cnf
+chown mark:mark /home/mark/.my.cnf
 
 echo "✅ ~/.my.cnf created successfully with your credentials."
 echo "File location: $(realpath ~/.my.cnf)"

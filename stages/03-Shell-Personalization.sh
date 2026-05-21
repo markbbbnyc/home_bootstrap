@@ -38,6 +38,14 @@ fi
 if command -v starship >/dev/null 2>&1; then
     eval "$(starship init bash)"
 fi
+
+
+# Display MOTD when starting a new tmux session
+if [[ -n "$TMUX" ]]; then
+    run-parts --lsbsysinit /etc/update-motd.d/ 2>/dev/null || true
+fi
+
+
 EOF
 chown mark:mark "$BASHRC"; chmod 644 "$BASHRC"
 

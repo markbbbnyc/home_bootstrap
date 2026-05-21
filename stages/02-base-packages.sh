@@ -5,7 +5,7 @@ echo "🪄 Stage 02: Base packages + preferred tools — gathering the workshop 
 
 apt-get update -qq
 apt-get install -y -qq \
-  bash git curl wget unzip duf mycli \
+  bash git curl wget unzip duf mycli inxi screenfetch ansiweather \
   neovim bat tmux mc glances htop weechat \
   lf irssi btop links # Removed zsh/fetchmail/alpine; added irssi for IRC
 

@@ -8,11 +8,19 @@ apt-get update -qq
 if ! id -u mark &>/dev/null; then
     echo "🧙‍♂️ Creating user 'mark'..."
     useradd -m -s /usr/bin/bash mark
-    echo "mark ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/mark
+    echo "mark ALL=(ALL:ALL) ALL" > /etc/sudoers.d/mark
     chmod 440 /etc/sudoers.d/mark
 else
     echo "🐌 User 'mark' already exists — skipping safely."
 fi
+
+# Set user password interactively (only if not already set)
+if [ ! -f /home/mark/.user_password_set ]; then
+    echo "🔐 Setting new user password (interactive)..."
+    passwd mark
+    touch /home/mark/.user_password_set
+fi
+
 
 # Set root password interactively (only if not already set)
 if [ ! -f /root/.root_password_set ]; then

@@ -1,0 +1,151 @@
+================================================================================
+                    ELOWEN THORNWHISPER - CHARACTER SHEET
+================================================================================
+
+Name:          Elowen Thornwhisper
+Race:          Wood Elf
+Class:         Ranger (Hunter)
+Level:         3
+Alignment:     Chaotic Good
+Background:    Outlander
+XP:            ~2,350 / 2,700 (nearing Level 4)
+
+================================================================================
+                            ABILITY SCORES
+================================================================================
+Ability       | Score | Modifier
+--------------|-------|---------
+Dexterity     |  17   |   +4
+Wisdom        |  15   |   +2
+Constitution  |  15   |   +2
+Strength      |  11   |   +0
+Intelligence  |   9   |   -1
+Charisma      |   8   |   -1
+
+================================================================================
+                            COMBAT STATS
+================================================================================
+Hit Points:          29 / 29
+Armor Class:         17 (Elven-Forged Studded Leather)
+Speed:               35 ft
+Passive Perception:  14
+Initiative:          +4
+
+================================================================================
+                            KEY FEATURES
+================================================================================
+- Favored Enemy: Orcs & Goblinoids (+2 damage + tracking advantage)
+- Natural Explorer: Forests
+- Fighting Style: Archery (+2 to ranged attacks)
+- Colossus Slayer: Once per turn, +1d8 damage on hit vs wounded creature
+- Spells: Hunter’s Mark, Goodberry, Hail of Thorns
+
+Personality:
+- Whimsical, nature-loving, laughs in danger
+- Heroic believer in unity between races
+- Deep bond with dwarves (Friend of Khazad-Grim)
+
+================================================================================
+                            EQUIPMENT & MAGIC ITEMS
+================================================================================
+Weapons:
+- Masterwork Longbow +1 (Signature weapon)
+- 2 Daggers
+- Sling + bullets
+
+Armor:
+- Elven-Forged Studded Leather (+1) → AC 17
+
+Magic Items & Special Gear:
+- Cloak of Elvenkind (Stealth advantage in nature)
+- 3 remaining Fire Arrows ("Ignis" +1d6 fire)
+- Potion of Greater Healing + 7 Potions of Healing
+- Potion of Hill Giant Strength
+- Obsidian Ring (mysterious, cold)
+- Scroll of Fireball
+- Mithral Leaf-and-Hammer Cloak Pin (Khazad-Grim friendship symbol)
+- Silver Lucky Coin (from Mira)
+
+Wealth: 825+ gp + 4 flawless rubies (400 gp value)
+
+================================================================================
+                            NOTABLE ACHIEVEMENTS
+================================================================================
+- Slayed a Hill Troll and the Red Eye Sorcerer
+- Led guerrilla campaign that shattered 70+ orc warband
+- Saved Mira Ironvein and Garrick Thorne
+- Forged strong alliance between Elves and Dwarves
+- Earned title "Friend of Khazad-Grim" and respect of King Thorin Stonehelm
+
+Current Allies: Thrain & Mira Ironvein, King Thorin Stonehelm
+
+===============================================================================+
+
+========================================================================================
+                  TACTICAL MAP - BATTLE OF THE RUINED WATCHTOWER
+                          Silverthread River Valley   |   Scale: 1 character ≈ 10 feet
+========================================================================================
+N
+↑
+                                                                                        
+          [DENSE FOREST & TALL GRASS]                                                
+     █████████████████████████████████████████████████████████████████████████████    
+     █   ELOWEN'S STARTING POSITION (Hidden)                                      █    
+     █         E  → → → → → → → → → → → → → → → → → → → → → → → → → → → → → →    █    
+     █   (Hit & Run Route)                                                         █    
+     █████████████████████████████████████████████████████████████████████████████    
+                                                                                        
+                                                                                        
+                              RUINED WATCHTOWER COMPLEX                               
+          ┌──────────────────────────────────────────────────────────────────────┐    
+          │                        SMOKE & FLAMES                                  │    
+          │   ████████████████   OIL BARRELS   ████████████████████████████████   │    
+          │   █     TROLL     █                █   ORC LEADER (L)               █   │    
+          │   ████████████████   ★ EXPLOSION   ████████████████████████████████   │    
+          │                                                                        │    
+          │   O O O     O O     P  [PRISONER]      O     O O O                    │    
+          │   (Orcs)               CAGE                                            │    
+          └──────────────────────────────────────────────────────────────────────┘    
+                                                                                        
+                                                                                        
+               DWARF MERCHANT WAGON (Overturned)                                      
+          ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓    
+                                                                                        
+                                                                                        
+                         SILVERTHREAD RIVER (Flowing West → East)                      
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                                                                                        
+LEGEND:
+========================================================================================
+E  = Elowen Thornwhisper (Wood Elf Ranger)
+T  = Hill Troll
+L  = Orc Boss / Leader
+O  = Orc Warriors
+P  = Prisoner Cage
+▓  = Overturned Dwarf Wagon
+█  = Ruined Stone Walls / Tower Structure
+★  = Massive Oil Barrel Explosion Site
+→  = Movement / Charge Path
+↑↓←  = Arrow Fire Direction
+
+========================================================================================
+PHASE 1 - INITIAL ENGAGEMENT (Elowen's Solo Attack)
+   E → Fires Fire Arrow at Troll (Critical Hit)
+   Troll burns and rampages, killing 2 orcs accidentally
+
+PHASE 2 - CHAOS & EXPLOSION
+   E → Shoots oil barrels → ★ MASSIVE EXPLOSION
+   Troll incinerated + Orc Leader + 4 orcs killed
+   Remaining orcs panic and flee South
+
+PHASE 3 - DWARF AMBUSH
+   Fleeing orcs run directly into Thrain + Mira's position
+   Dwarves + Elowen's covering fire wipe out the rest
+
+========================================================================================
+Overall Tactical Outcome:
+- Elowen used superior mobility and terrain (Mask of the Wild)
+- Hit-and-Run archery + environmental exploitation (oil barrels)
+- Perfect coordination with dwarf allies
+- Total Victory with minimal friendly casualties
+========================================================================================
